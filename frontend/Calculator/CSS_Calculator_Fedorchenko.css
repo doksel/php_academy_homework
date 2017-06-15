@@ -1,0 +1,147 @@
+body{
+    font-family: Calibri;
+    font-size: 13px;
+}
+/*Все кнопки*/
+button{
+    border: 1px solid darkgray;
+    color: #1e395b;
+    font-size: 11px;
+    height: 30px;
+    width: 35px;
+    box-shadow: none;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom, #e9f2fe 50%, #dee8f4 50%);
+    box-shadow: inset 0 0 3px 1px white;
+}
+/*Весь калькулятор*/
+#basic{
+    height: 330px;
+    width: 225px;
+    background-color: #e9f2fe;
+    border: 1px solid #67787b;
+    border-radius: 10px;
+    padding: 8px 6px 5px 8px;
+    position: relative;
+    box-shadow: 0 0 5px 6px rgba(102, 117, 120, 0.54);
+}
+header{
+    height: 25px;
+}
+/*Все компоненты шапки*/
+#iconcal, #writecal, #buttoniks, #buttonminus, #buttonsqear{
+    float: left;
+}
+/*Кнопки в правом верхнем углу*/
+
+/*#buttonminus, #buttonsqear {
+    color: #ffffff;
+    font-weight: bolder;
+    float: right;
+    margin-top: -8px;
+    border-radius: 0;
+    height: 20px;
+    width: 30px;
+    background-image: linear-gradient(to bottom, #e6effb 0%, #c8c7cc 60%, #c8c7cc 100%);
+}
+#buttonminus{
+    border-bottom-left-radius: 5px;
+    color: #ffffff;
+    padding-top: -15px;
+}*/
+#buttonminus{
+    float: right;
+    margin-top: -8px;
+    border-radius: 0 0 0 5px;
+    height: 20px;
+    width: 30px;
+    background-image: url("buttonminus.jpg");
+    background-size: cover;
+}
+#buttonsqear{
+    float: right;
+    margin-top: -8px;
+    border-radius: 0;
+    height: 20px;
+    width: 30px;
+    background-image: url("buttonsqear.jpg");
+    background-size: cover;
+}
+#buttoniks{
+    background-image: url("buttonres.jpg");
+    background-size: cover;
+    float: right;
+    margin-top: -8px;
+    border-radius: 0 0 5px 0;
+    height: 20px;
+    width: 50px;
+}
+#iconcal, img{
+    height: 20px;
+    width: 20px;
+}
+article{
+    background-color: #d6e6f7;
+    height: 300px;
+    width: 220px;
+    border: 1px solid #67787b;
+}
+/*Экран вывода цифр*/
+#screen{
+    margin: auto;
+    height: 50px;
+    width: 200px;
+    margin-top: 10px;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom, #e6effb 0%, #ffffff 100%);
+}
+/*Ссылки над экраном*/
+a{
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+/*Блок над экраном с сылками*/
+#head{
+    height: 20px;
+    width: 210px;
+    padding-left: 10px;
+    border-bottom: 1px solid #cfcfcf;
+    background-image: linear-gradient(to bottom, #ffffff 0%, #dae0f1 60%, #dae0f1 100%);
+}
+/*Кнопка ноль*/
+#nule{
+    width: 75px;
+}
+/*Кнопка равно*/
+#ravno{
+    height: 67px;
+    font-size: 24px;
+}
+/*Кнопка удаления*/
+#reset{
+    font-size: 20px;
+}
+/*Таблица со всеми кнопками*/
+table{
+    height: 150px;
+    width: 215px;
+    margin: auto;
+    margin-left: 4px;
+}
+/*Кнопки цифры*/
+.num, #nule{
+    background-image: linear-gradient(to bottom, rgba(254, 254, 254, 0.8) 50%, #e9f2fe 50%);
+    font-size: 15px;
+}
+/*Х в кнопке с дробью*/
+span{
+    font-family: Gabriola;
+    font-style: italic;
+    font-size: 15px;
+}
+/*Кнопки памяти*/
+.memor{
+    background: #d6e6f7;
+}

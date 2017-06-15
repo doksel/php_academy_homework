@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin-ext");
+
+/*Сброс настроек браузера*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    background: #3c3c3c;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+
+}
+
+/* Верхнее меню*/
+#firstnav{
+    border-bottom: 1px solid black;
+    height: 37px;
+}
+
+#firstnav_1{
+    width: 1140px;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 9px 0;
+}
+#follow img{
+    height: 12px;
+    width: 12px;
+    margin-right: 5px;
+}
+
+#follow, #twitticon{
+    float: left;
+    height: 36px;
+}
+#templ_lic, #discl, #templ_sup, #later, #jurnal, #advertise{
+    float: right;
+    height: 36px;
+}
+#firstnav a{
+    display: block;
+    color: #ffffff;
+    float: left;
+    padding-left: 16px;
+    transition: 1s color;
+}
+#firstnav a:hover{
+    color: #df6c52;
+}
+#follow a{
+    padding-left: 0;
+}
+#follow a:hover{
+    transition: 1s color;
+    color: #3c92cd;
+}
+/* Центральная надпись шапки*/
+.head{
+    padding: 30px 0 0 0;
+    background-color: #292929;
+    height: 136px;
+    border-bottom: 1px solid #222222;
+    text-align: center;
+}
+#head_1 a{
+    display: block;
+    font-size: 52px;
+    color: #ffffff;
+    font-weight: lighter;
+}
+#head_1 a span{
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+#head_1{
+    margin: 0 auto;
+    width: 340px;
+}
+#head_2{
+    width: 400px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 13px;
+}
+/* Стили сайдбара*/
+#sidebar{
+    height: 22px;
+    width: 100%;
+    background-color: #313131;
+    padding:30px 0;
+}
+
+#sidebar a{
+    display: block;
+    float: left;
+    color: #999999;
+    padding: 0 0 0 25px;
+    transition: 1s color;
+}
+#sidebar a:hover {
+    color: #df6c52;
+}
+.sidebar_1{
+    margin-left: 130px;
+}
+.sidebar_5{
+    float: none;
+    margin-right: 70px;
+
+}
+/* Навигация*/
+#youarehere{
+    height: 24px;
+    background: #DF7879;
+    font-size: 12px;
+    color: white;
+    padding: 8px 0 0 0;
+}
+#youarehere_1{
+    height: 36px;
+    width: 300px;
+    margin: 0 auto;
+}
+.sclas{
+    float: left;
+    margin-right: 8px;
+}
+#youarehere a{
+    display: block;
+    float: left;
+    color: white;
+    margin-right: 8px;
+}
+
+/*Картинки первые*/
+.first_content{
+    display: block;
+    height: 287px;
+    width: 1140px;
+    margin: 0 auto;
+    padding-bottom: 110px;
+}
+.first_content img{
+    height: 280px;
+    width: 348px;
+}
+.first_content_1, .first_content_2, .first_content_3{
+    height: 280px;
+    width: 348px;
+    margin: 80px 42px 30px 0;
+    display: inline-block;
+}
+.first_content_3{
+    margin-right: 0;
+}
+/*Ткст между картинками*/
+#textpage{
+    width: 700px;
+    height: 86px;
+    color: #e3ce90;
+    font-size: 35px;
+    margin-left: 105px;
+    font-weight: 300;
+}
+/*Вторые девять картинок*/
+.Second_content{
+    display: block;
+    height: 1251px;
+    width: 1140px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 14px;
+}
+.Second_content_1, .Second_content_2, .Second_content_3,
+.Second_content_4, .Second_content_5, .Second_content_6,
+.Second_content_7, .Second_content_8, .Second_content_9{
+    display: inline-block;
+    height: 377px;
+    width: 348px;
+    margin: 0 42px 40px 0;
+    box-shadow: 6px 6px 0 #141414;
+    position: relative;
+}
+.Second_content_3,.Second_content_6,.Second_content_9{
+    margin-right: 0;
+}
+.Second_content img{
+     height: 277px;
+     width: 348px;
+ }
+.Second_content_1_down{
+    height: 81px;
+    width: 348px;
+    text-align: center;
+    background: #292929;
+    padding-top: 20px;
+    margin-top: -3px;
+}
+.Second_content_1_down a{
+    display: block;
+    color: #df7879;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/*Стили появления лупы на картинках*/
+.Second_content span{
+    display: block;
+    position: relative;
+}
+#lupa{
+    width: 30px;
+    height: 30px;
+    padding: 15px 10px 10px 15px;
+    border-radius: 50%;
+    background: #df7879 url("images/magnifying-glass.png") no-repeat center;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    z-index: -1;
+}
+#lupa img{
+    height: 24px;
+    width: 24px;
+}
+
+/*span:hover:before {
+    width: 30px;
+    height: 30px;
+    padding: 15px 10px 10px 15px;
+    border-radius: 50%;
+    background-color: #df7879;
+    content: url("images/magnifying-glass.png");
+    z-index: 1;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}*/
+span:hover img{
+    opacity: 0.3;
+    transition: 0.5s;
+}
+span:hover #lupa{
+    z-index: 1;
+}
+/*переходы на страницы*/
+.navpage{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 1140px;
+    font-size: 19px;
+}
+.navpage a{
+    color: #df7879;
+}
+.page:last-child{
+    font-weight: bold;
+}
+.page:first-child{
+    font-weight: bold;
+}
+.page{
+
+    border: 1px solid #232323;
+    padding: 5px 10px;
+    margin: 1px 4px;
+    text-align: center;
+}
+/*строка под переходами на страницы*/
+#faq{
+    width: 1140px;
+    margin: 30px auto;
+    color: #999999;
+}
+#faq a{
+    color: #df7879;
+}
+
+/*самый нижний блок - футер*/
+#down{
+    background: #232323;
+    margin-top: 80px;
+    color: #999999;
+}
+#down_in{
+    width: 1140px;
+    margin: 0 auto;
+    padding: 30px 0 50px 0;
+}
+#down_in a{
+    color: #999999;
+}
+#down_2_1, #down_2_2{
+    height: 16px;
+    width: 20px;
+    display: inline-block;
+    float: right;
+    text-align: center;
+}
+#down_2_1{
+    border-left: 1px solid #999999;
+    padding-left: 5px;
+}
+#down_2_2{
+    padding-right: 5px;
+}
+#down_1{
+    display: inline-block;
+    float: left;
+}
+
+/*перевод на верх*/
+#icon_up{
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 60px;
+    right: 5px;
+    background: #df7879;
+    border-radius: 8px;
+    opacity: 0.6;
+    text-align: center;
+    padding: 10px 5px 0 5px;
+}

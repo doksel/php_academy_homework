@@ -1,0 +1,39 @@
+body{
+    background-color: #f8f5f7;
+}
+.resume{
+    width: 500px;
+    font-family: Arial;
+    font-size: 10px;
+    color: #5c5a5c;
+    font-weight: 700;
+    margin: auto;
+}
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+a{
+    font-style: italic;
+    color: #3174de;
+}
+h1, h3{
+    color: black;
+}
+p{
+    text-indent:20px;
+}
+img{
+    height: 150px;
+    align-content: center;
+    border: 2px solid #b6bccc;
+}
+#fisttext{
+    text-indent: 0;
+}
+#foto{
+    text-align: center;
+}
+.line{
+    border: 1px solid #ced4e4;
+}
