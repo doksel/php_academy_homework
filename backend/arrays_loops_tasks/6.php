@@ -3,6 +3,10 @@ $arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубо
 $en = [];
 $ru = [];
 foreach ($arr as $k => $v){
-    $en = array_keys($arr);
-    $ru = array_values($arr);
+    $en[] = $k;
+    $ru[] = $v;
 }
+echo '<pre>';
+print_r($en);
+print_r($ru);
+echo '</pre>';
