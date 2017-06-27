@@ -1,7 +1,7 @@
 <?php
 var_dump(getCommonWords($_POST['text_a'], $_POST['text_b']));
 
-function getCommonWords($a, $b):array
+function getCommonWords($a, $b)
 {
     $array_a = explode(' ', $a);
     $array_b = explode(' ', $b);
