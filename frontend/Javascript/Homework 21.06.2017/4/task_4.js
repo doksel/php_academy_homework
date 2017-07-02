@@ -1,7 +1,21 @@
-function min(a,b) {
-    var x = Math.min(a,b);
-    document.write(x);
+// function min(a,b) {
+//     var x = Math.min(a,b);
+//     document.write(x);
+// }
+// min(1,2);
+// document.write('<br>');
+// min(23,3);
+//
+// document.write('<hr>');
+
+function minNum(a, b)
+{
+    if (a > b){
+    document.write(b);
+}else{
+    document.write(a);
 }
-min(1,2);
+}
+minNum(1,2);
 document.write('<br>');
-min(23,3);
+minNum(23,3);
