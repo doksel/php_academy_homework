@@ -1,3 +1,8 @@
-/**
- * Created by User on 23.07.2017.
- */
+alert(getFullname('Ivan'));
+var surname = "Ivanov";
+function getFullname(name) {
+    return name + " " + surname;
+}
+// alert выведет Ivan undefined, т.к. когда срабатывает alert функция
+// именная определена, а переменная со значение undefined, до
+// неё мы ещё не дошли.

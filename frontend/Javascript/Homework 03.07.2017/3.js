@@ -9,3 +9,18 @@ function isObjectEmpty(obj)
 }
 
 isObjectEmpty(myObject);
+
+// Второй вариант--------------------------
+
+var myObject = {};
+
+function isObjectEmpty2(obj)
+{
+    var keys = Object.keys(obj);
+    if (keys.length == 0){
+        return false;
+    }
+    return true;
+}
+
+isObjectEmpty2(myObject);
