@@ -10,7 +10,6 @@ function Calculator() {
     Object.defineProperty(history, "operation", {writable: false});
 
     this.history = {
-        i: 1,
         operation: [],
 
         showAction: function showAction(i) {
@@ -27,15 +26,16 @@ function Calculator() {
                 console.log(this.showAction(i));
             }
         },
+        CONST: 1,
         next: function () {
-            return this.showAction(++this.i);
+            return this.showAction(this.CONST++);
         },
         prev: function () {
-            return this.showAction(--this.i);
+            return this.showAction(this.CONST--);
         }
     };
 
-    this.sum = function sum() {
+    this.sum = function () {
         var sum = arguments[0];
         for (var i = 1; i < arguments.length; i++) {
             sum += arguments[i];
@@ -51,7 +51,7 @@ function Calculator() {
         return result;
     };
 
-    this.substract = function substract() {
+    this.substract = function () {
         var substract = arguments[0];
         for (var i = 1; i < arguments.length; i++) {
             substract -= arguments[i];
@@ -67,7 +67,7 @@ function Calculator() {
         return result;
     };
 
-    this.multiply = function multiply() {
+    this.multiply = function () {
         var multiply = arguments[0];
         for (var i = 1; i < arguments.length; i++) {
             multiply *= arguments[i];
@@ -83,7 +83,7 @@ function Calculator() {
         return result;
     };
 
-    this.divide = function divide() {
+    this.divide = function () {
         var divide = arguments[0];
         for (var i = 1; i < arguments.length; i++) {
             divide /= arguments[i];
@@ -99,7 +99,7 @@ function Calculator() {
         return result;
     };
 
-    this.sqrt = function sqrt(arg) {
+    this.sqrt = function (arg) {
         var result = (arg * arg).toFixed(Calculator.tofixed);
         var langValues = 'ДЕЛЕНИЕ';
         if (Calculator.lang === 'ua') {

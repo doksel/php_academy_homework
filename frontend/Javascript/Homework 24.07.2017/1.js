@@ -12,15 +12,25 @@ function Student(obj) {
         for (var i = 0; i < this.grades.length; i++) {
             gradesAll += this.grades[i];
         }
-        return +(gradesAll / this.grades.length).toFixed(2);
+        var average = (gradesAll / this.grades.length).toFixed(2);
+        return +average;
     };
 
-    Student.group.push(this);
+    Student.group.push([obj.name, obj.surname, obj.grades, this.gradesAvarage()]);
+    Student.group.sort(function (a,b) {
+        if (a[3] < b[3]) {return 1;}
+        else if (a[3] > b[3]) {return -1;}
+        else{return 0;}
+    });
     Student.showAllStudents = function () {
         for(var i = 0; i < Student.group.length; i++){
-            Student.allStudents[i] = Student.group[i].fullName() + '.' + 'Средний бал = ' + Student.group[i].gradesAvarage();
+            Student.allStudents[i] = Student.group[i][0] + ' ' + Student.group[i][1] + '.' + 'Средний бал = ' + Student.group[i][3];
         }return Student.allStudents;
     };
+    Student.bestStudent = Student.group[0];
+    Student.showBestStudent = function () {
+        return Student.group[0][0] + ' ' + Student.group[0][1] + ' - лучший студент курса. Средний балл = ' + Student.group[0][3];
+    }
 }
 
 var student1 = new Student({name: 'Ivan', surname: 'Ivanov', grades: [4,5,5]});
