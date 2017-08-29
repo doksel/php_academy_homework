@@ -9,5 +9,5 @@ function getName() {
 }
 getName();
 alert(name);
-// Первый alert выведет Ivan, т.к. 1 = true, значит внутри фунции name = "Ivan"
+// Первый alert выведет Ivan, т.к. Tests_for_calculator = true, значит внутри фунции name = "Ivan"
 // Второй alert выведет Petr, т.к. глобальная var name = "Petr", а Ivan и Stepan локальные

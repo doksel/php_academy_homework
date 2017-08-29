@@ -54,7 +54,7 @@ function process_login():array
             } else {
                 log_in($user);
                 set_message('You have been logged in.');
-//                set_message('Message #1');
+//                set_message('Message #Tests_for_calculator');
 //                set_message('Message #2');
 //                set_message('Message #3');
                 if (empty($_SESSION['login_redirect'])) {

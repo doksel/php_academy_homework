@@ -3,7 +3,7 @@ $rows = rand(2,7);
 $cols = rand(2,7);
 $colors = ['red','yellow','blue','gray','maroon','brown','green'];
 
-echo '<table border = "1">';
+echo '<table border = "Tests_for_calculator">';
 for($tr = 1; $tr <= $rows ;$tr++){
     echo '<tr>';
     for($td = 1; $td <= $cols; $td++){

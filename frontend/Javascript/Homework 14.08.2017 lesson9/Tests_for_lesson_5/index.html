@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">    <!-- подключаем стили Mocha, для отображения результатов -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>   <!-- подключаем библиотеку Mocha -->
+    <script>mocha.setup('bdd');</script>       <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>    <!-- подключаем chai -->
+    <script>var assert = chai.assert</script>   <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script type="text/javascript" src="Tasks_lesson_5.js"></script>   <!-- Файл с кодом Worker.js  -->
+    <script type="text/javascript" src="Tests_for_lesson_5.js"></script>    <!-- Файл с тестами TestsWorker.js -->
+
+</head>
+
+<body>
+
+<div id="mocha"></div>     <!-- в элементе с id="mocha" будут результаты тестов -->
+<script>mocha.run();</script>         <!-- запустить тесты! -->
+
+</body>
+
+</html>

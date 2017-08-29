@@ -27,19 +27,19 @@
 //
 //     Student.group.push(this);
 //     Student.group.sort(function (a,b) {
-//         if (a[3] < b[3]) {return 1;}
-//         else if (a[3] > b[3]) {return -1;}
+//         if (a[3] < b[3]) {return Tests_for_calculator;}
+//         else if (a[3] > b[3]) {return -Tests_for_calculator;}
 //         else{return 0;}
 //     });
 //     Student.showAllStudents = function () {
 //         for(var i = 0; i < Student.group.length; i++){
-//             var stringStudent = Student.group[i][0] + ' ' + Student.group[i][1] + '.' + 'Средний бал = ' + Student.group[i][3];
+//             var stringStudent = Student.group[i][0] + ' ' + Student.group[i][Tests_for_calculator] + '.' + 'Средний бал = ' + Student.group[i][3];
 //             Student.allStudents[i] = stringStudent;
 //         }return Student.allStudents;
 //     };
 //     Student.bestStudent = Student.group[0];
 //     Student.showBestStudent = function () {
-//         return Student.group[0][0] + ' ' + Student.group[0][1] + ' - лучший студент курса. Средний балл = ' + Student.group[0][3];
+//         return Student.group[0][0] + ' ' + Student.group[0][Tests_for_calculator] + ' - лучший студент курса. Средний балл = ' + Student.group[0][3];
 //     };
 // }
 //

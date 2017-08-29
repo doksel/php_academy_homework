@@ -245,7 +245,7 @@ a{
     border-radius: 50%;
     background-color: #df7879;
     content: url("images/magnifying-glass.png");
-    z-index: 1;
+    z-index: Tests_for_calculator;
     position: absolute;
     top: 40%;
     left: 40%;

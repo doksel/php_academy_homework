@@ -12,10 +12,10 @@ function Calculator() {
     this.history = {
         operation: [],
 
-        showAction: function showAction(i) {
-            var getStringResult = 'Операци: ' + this.operation[i].op + '. Значения: ' + this.operation[i].values.join(',') + '. Зезультат: ' + this.operation[i].result;
+        showAction: function(i) {
+            var getStringResult = 'Операци: ' + this.operation[i].op + '. Значения: ' + this.operation[i].values.join(',') + '. Результат: ' + this.operation[i].result;
             if (Calculator.lang === 'ua') {
-                getStringResult = 'Операція: ' + this.operation[i].op + '. Значення: ' + this.operation[i].values.join(',') + '. Зезультат: ' + this.operation[i].result;
+                getStringResult = 'Операція: ' + this.operation[i].op + '. Значення: ' + this.operation[i].values.join(',') + '. Результат: ' + this.operation[i].result;
             } else if (Calculator.lang === 'en') {
                 getStringResult = 'Operation: ' + this.operation[i].op + '. Values: ' + this.operation[i].values.join(',') + '. Result: ' + this.operation[i].result;
             }

@@ -2,7 +2,7 @@
 //     var x = Math.min(a,b);
 //     document.write(x);
 // }
-// min(1,2);
+// min(Tests_for_calculator,2);
 // document.write('<br>');
 // min(23,3);
 //
