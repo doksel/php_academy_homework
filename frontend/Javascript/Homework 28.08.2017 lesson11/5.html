@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="search">
+    <label>Search:
+        <input type="text" name="search">
+    </label>
+</form>
+<hr>
+<form name="search-person">
+    Search by students
+    <table id="age-table">
+        <tbody>
+        <tr>
+            <td>Age</td>
+            <td id="age-list">
+                <label>
+                    <input type="radio" name="age" value="young"><18
+                </label>
+                <label>
+                    <input type="radio" name="age" value="nature">18-50
+                </label>
+                <label>
+                    <input type="radio" name="age" value="senior">50>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Additional:</td>
+            <td>
+                <input type="text" name="info[0]">
+                <input type="text" name="info[1]">
+                <input type="text" name="info[2]">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<script>
+var getAllElemLabel = document.querySelectorAll('table label');
+var firstTdTable = document.querySelector('table tbody').firstElementChild.firstElementChild;
+var secondForm = document.body.childNodes[1];
+var formNameSearch = document.querySelector('form');
+var inputNameSearch = document.querySelector('input[name="search"]');
+var elemNameInfo0 = document.querySelector('[name="info[0]"]');
+var elemNameInfo0InFormNameSearchPerson = document.querySelector('form[name="search-person"] [name="info[0]"]');
+</script>
+</body>
+</html>
+
+Найдите (получите в переменную):
+Все элементы label внутри таблицы. Должно быть 3 элемента.
+Первую ячейку таблицы (со словом "Age").
+Вторую форму в документе.
+Форму с именем search, без использования её позиции в документе.
+Элемент input в форме с именем search. Если их несколько, то нужен первый.
+Элемент с именем info[0], без точного знания его позиции в документе.
+Элемент с именем info[0], внутри формы с именем search-person.

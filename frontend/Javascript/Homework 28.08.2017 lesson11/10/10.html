@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="field" style="background-color: #2feb1f; width: 300px; height: 200px; border: 15px groove black;
+ display: block; position: relative">
+    <div class="ball" style="display: block; position: absolute; z-index: 1; width: 50px; height: 50px; border-radius: 50%;
+ border: 1px groove black; background-image: url(textura-ball.jpg); transition: 1s"></div>
+</div>
+
+<script>
+    var field = document.querySelector('.field');
+    var ball = document.querySelector('.ball');
+    field.onclick = function(event) {
+            if(event.clientX > field.style.width- ball.style.width)ball.style.left = event.clientX - ball.offsetWidth*2  + 'px';
+            if(event.clientY > field.style.height- ball.style.height)ball.style.top = event.clientY - ball.offsetHeight*2  + 'px';
+            else { ball.style.left = event.clientX - ball.offsetWidth  + 'px';
+                ball.style.top = event.clientY - ball.offsetHeight + 'px';}
+    }
+</script>
+</body>
+</html>

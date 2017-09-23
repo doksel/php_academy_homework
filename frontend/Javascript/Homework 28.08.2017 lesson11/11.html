@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .second{
+            display: block;
+            width: 300px;
+            height: 60px;
+        }
+        .second div{
+            width: 200px;
+            height: 50px;
+            border: 1px groove black;
+            float: left;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="first">
+    <div class="second"><div id="message1"></div><button data-class="message1">X</button></div>
+    <div class="second"><div id="message2"></div><button data-class="message2">X</button></div>
+    <div class="second"><div id="message3"></div><button data-class="message3">X</button></div>
+    <div class="second"><div id="message4"></div><button data-class="message4">X</button></div>
+    <div class="second"><div id="message5"></div><button data-class="message5">X</button></div>
+</div>
+</body>
+<script>
+        document.querySelector('body div').onclick = function(event) {
+            var target = event.target;
+            var buttonClass = target.getAttribute('data-class');
+            if (!buttonClass) return;
+            var message = document.getElementById(buttonClass);
+            message.style.display = 'none';
+        };
+</script>
+</html>
+
+
+Дан список сообщений. Добавьте каждому сообщению кнопку для его удаления. Используйте делегирование событий.
+Один обработчик для всего. У вас например 5 div расположенные вертикально. Справа каждого div есть кнопка-крестик,
+по клику на который текущий div должен исчезнуть

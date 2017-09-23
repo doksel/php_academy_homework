@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>Футбол
+        <ul>
+            <li>Лига Чемптонов
+                <ul>
+                    <li>Реал</li>
+                    <li>Барселона</li>
+                    <li>Монако</li>
+                    <li>ПСЖ</li>
+                </ul>
+            </li>
+            <li>Лига Европы
+                <ul>
+                    <li>Арсенал</li>
+                    <li>Динамо</li>
+                    <li>Заря</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Бокс
+        <ul>
+            <li>Тяжелый вес
+                <ul>
+                    <li>Усик</li>
+                    <li>Кличко</li>
+                </ul>
+            </li>
+            <li>Легкий вес
+                <ul>
+                    <li>Ломаченко</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script>
+var textAllLi = document.querySelectorAll('li');
+for(var i=0; i<textAllLi.length; i++){
+    console.log('li-' + i + ' : ' + textAllLi[i].innerText);
+}
+
+</script>
+</body>
+</html>
+
+<!--Есть дерево из тегов <ul>/<li>.-->
+    <!--Напишите код, который для каждого элемента <li> выведет:-->
+    <!--Текст непосредственно в нём (без подразделов).-->
+    <!--Количество вложенных в него элементов <li> – всех, с учётом вложенны-->

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .button {
+        ~moz~border-radius: 8px;
+        ~webkit~border-radius: 8px;
+        border-radius: 8px;
+        border: 2px groove green;
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        width: 100px;
+        text-decoration: none;
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<a href="/" class="button"></a>
+<hr>
+<a href="/" class="button2"></a>
+<script>
+    var button2 = document.querySelector('a.button2');
+    button2.style.cssText="~moz~border-radius: 8px;~webkit~border-radius: 8px;border-radius: 8px;border: 2px groove green;display: block;height: 30px;line-height: 30px;width: 100px;text-decoration: none;text-align: center;color: red;font-weight: bold;";
+</script>
+</body>
+</html>
+
+<!--Создайте кнопку в виде элемента <a> с заданным стилем, используя JavaScript. -->
+    <!--В примере ниже такая кнопка создана при помощи HTML/CSS. -->
+    <!--В вашем решении кнопка должна создаваться, настраиваться и добавляться в документ -->
+    <!--при помощи только JavaScript, без тегов <style> и <a>.-->

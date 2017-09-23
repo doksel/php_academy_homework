@@ -21,6 +21,14 @@ describe("Проверка функций Calculator", function() {
     });
 
     it("clearHistory - обнуляет историю калькулятора", function() {
-        assert.equal(calc1.clearHistory(), []);
+        calc1.clearHistory();
+        var arr = [];
+        assert.equal(calc1.history.operation, arr);
+    });
+
+    it("showAction - обнуляет историю калькулятора", function() {
+        calc1.clearHistory();
+
+        assert.equal(calc1.history.showAction(), );
     });
 });

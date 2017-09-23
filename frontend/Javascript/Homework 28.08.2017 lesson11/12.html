@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><span data-father="closeLi">Футбол</span>
+        <ul id="closeLi">
+            <li><span data-father="closeLi1">Лига Чемптонов</span>
+                <ul id="closeLi1">
+                    <li>Реал</li>
+                    <li>Барселона</li>
+                    <li>Монако</li>
+                    <li>ПСЖ</li>
+                </ul>
+            </li>
+            <li><span data-father="closeLi2">Лига Европы</span>
+                <ul id="closeLi2">
+                    <li>Арсенал</li>
+                    <li>Динамо</li>
+                    <li>Заря</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><span data-father="closeLi3">Бокс</span>
+        <ul id="closeLi3">
+            <li><span data-father="closeLi4">Тяжелый вес</span>
+                <ul id="closeLi4">
+                    <li>Усик</li>
+                    <li>Кличко</li>
+                </ul>
+            </li>
+            <li><span data-father="closeLi5">Легкий вес</span>
+                <ul id="closeLi5">
+                    <li>Ломаченко</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script>
+
+    document.querySelector('body ul').onclick = function (event) {
+        var target = event.target;
+        var id = target.getAttribute('data-father');
+        if (!id) return;
+        var elem = document.getElementById(id);
+        elem.hidden = !elem.hidden;
+    };
+    document.querySelector('body ul').onmouseover = function (event) {
+        var target = event.target;
+        var id = target.getAttribute('data-father');
+        if (!id) return;
+        target.style.fontWeight='bold';
+    };
+    document.querySelector('body ul').onmouseout = function (event) {
+        var target = event.target;
+        var id = target.getAttribute('data-father');
+        if (!id) return;
+        target.style.fontWeight='';
+    }
+</script>
+</body>
+</html>
+
+
+Создайте дерево, которое по клику на заголовок скрывает-показывает детей. Требования:
+ -	Использовать делегирование.
+ -	Клик вне текста заголовка (на пустом месте) ничего делать не должен.
+ -	При наведении на заголовок – он становится жирным, реализовать через CSS.
+Взять верстку из задачи №6
