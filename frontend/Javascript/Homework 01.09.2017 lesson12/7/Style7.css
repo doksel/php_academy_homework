@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+header{
+    background-color: yellow;
+    height: 20px;
+    width: 100%;
+    padding: 20px 0;
+}
+nav{
+    display: block;
+    height: 240px;
+    width: 30%;
+    background-color: #6adbeb;
+    float: left;
+}
+h1{
+    margin: 0;
+    padding: 20px;
+}
+article{
+    display: block;
+    background-color: #df7879;
+    width: 70%;
+    float: right;
+}
+#avatar{
+    height: 200px;
+    width: 200px;
+    display: block;
+    float: left;
+    background-color: white;
+    margin: 20px;
+    font-size: 18px;
+    border: solid 1px black;
+}
+.img img{
+    height: 80px;
+}
+article p{
+    margin: 10px;
+}

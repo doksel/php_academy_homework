@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="contents">
+        <a href="...">sdhsdfhss</a><br>
+    </div>
+<script>
+    var contents = document.getElementById('contents');
+    var myLink = document.createElement('a');
+    myLink.setAttribute('href', 'https://learn.javascript.ru/tutorial/map');
+    myLink.innerHTML = "<i>внешняя ссылка</i>";
+    contents.appendChild(myLink);
+    contents.onclick = function (event) {
+        if(confirm('Вы действительно хотите покинуть страницу?')){
+            return true;
+        }else {return false;}
+    }
+</script>
+</body>
+</html>
+
+<!--Сделайте так, чтобы при клике на ссылки внутри элемента #contents пользователю выводился вопрос о том, действительно ли-->
+<!--он хочет покинуть страницу и если он не хочет, то прерывать переход по ссылке.-->
+<!--Детали:-->
+<!--●	Содержимое #contents может быть загружено динамически и присвоено при помощи innerHTML. Так что найти все ссылки и-->
+    <!--поставить на них обработчики нельзя. Используйте делегирование.-->
+<!--●	Содержимое может содержать вложенные теги, в том числе внутри ссылок, например, <a href=".."><i>...</i></a>.-->

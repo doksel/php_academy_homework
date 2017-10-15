@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function handler() {
+        alert("...");
+        return false;
+    }
+</script>
+<a href="http://w3.org" onclick="handler()">w3.org</a>
+</body>
+</html>
+
+Почему в этом документе return false не работает? По замыслу, переход на w3.org при клике должен отменяться.
+Однако, на самом деле он происходит. В чём дело и как поправить?

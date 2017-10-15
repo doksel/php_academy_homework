@@ -16,10 +16,29 @@
     var field = document.querySelector('.field');
     var ball = document.querySelector('.ball');
     field.onclick = function(event) {
-            if(event.clientX > field.style.width- ball.style.width)ball.style.left = event.clientX - ball.offsetWidth*2  + 'px';
-            if(event.clientY > field.style.height- ball.style.height)ball.style.top = event.clientY - ball.offsetHeight*2  + 'px';
-            else { ball.style.left = event.clientX - ball.offsetWidth  + 'px';
-                ball.style.top = event.clientY - ball.offsetHeight + 'px';}
+        var fieldCoords = this.getBoundingClientRect();
+        var fieldInnerCoords = {
+            top: fieldCoords.top + field.clientTop,
+            left: fieldCoords.left + field.clientLeft
+        };
+        var ballCoords = {
+            top: event.clientY - fieldInnerCoords.top - ball.clientHeight / 2,
+            left: event.clientX - fieldInnerCoords.left - ball.clientWidth / 2
+        };
+        if (ballCoords.top < 0) ballCoords.top = 0;
+        if (ballCoords.left < 0) ballCoords.left = 0;
+        if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+            ballCoords.left = field.clientWidth - ball.clientWidth;
+        }
+        if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+            ballCoords.top = field.clientHeight - ball.clientHeight;
+        }
+        ball.style.left = ballCoords.left + 'px';
+        ball.style.top = ballCoords.top + 'px';
+//            if(event.clientX > field.style.width- ball.style.width)ball.style.left = event.clientX - ball.offsetWidth*2  + 'px';
+//            if(event.clientY > field.style.height- ball.style.height)ball.style.top = event.clientY - ball.offsetHeight*2  + 'px';
+//            else {ball.style.left = event.clientX - ball.offsetWidth + 'px';
+//                ball.style.top = event.clientY - ball.offsetHeight + 'px';}
     }
 </script>
 </body>

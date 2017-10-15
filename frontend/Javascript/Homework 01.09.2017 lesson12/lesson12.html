@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lesson 12</title>
+    <style media="screen">
+      input {
+        display: block;
+        margin: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <input value="Ex 1" onclick="alert('Hello, World!')" type="button">
+
+    <hr>
+    <!-- 2 -->
+    <input type="button" onclick="countStudents()" value="Ex 2"/>
+    <script type="text/javascript">
+    function countStudents() {
+      for(var i=1; i<=3; i++) {
+        alert("Student #" + i);
+      }
+    }
+    </script>
+
+    <hr>
+    <!-- 3 -->
+    <input id="elem" type="button" value="Ex 3" />
+    <script>
+      elem.onclick = function() {
+        alert( 'Hello' );
+      };
+    </script>
+
+    <hr>
+    <!-- 4 -->
+    <input type="button" id="elem2" onclick="alert('First')" value="Ex 4" />
+    <script>
+      elem2.onclick = function() { // перезапишет существующий обработчик
+        alert( 'Second' ); // выведется только это
+      };
+    </script>
+
+    <hr>
+    <!-- 5 -->
+    <input type="button" id="elem3" value="Ex 5" />
+    <script type="text/javascript">
+      function sayThanks() {
+        alert( 'Thanks!' );
+      }
+      elem3.onclick = sayThanks;
+    </script>
+
+    <hr>
+    <!-- 6 -->
+    <input type="button" id="elem4" value="Ex 6" />
+    <script type="text/javascript">
+      elem4.onclick = function() { alert(1); }
+      elem4.onclick = function() { alert(2); }
+    </script>
+
+    <hr>
+    <!-- 7 -->
+    <input type="button" id="elem5" value="Ex 7" />
+    <script type="text/javascript">
+      function handler() {
+        alert( 'Ex 7' );
+      }
+
+      elem5.addEventListener("click", handler);
+      elem5.removeEventListener("click", handler);
+    </script>
+
+    <hr>
+    <!-- 8 -->
+    <input id="elem6" type="button" value="Ex 8"/>
+
+    <script>
+      function handler1() {
+        alert('Handler 1 result');
+      };
+
+      function handler2() {
+        alert('Handler 2 result');
+      }
+
+      elem6.onclick = function() { alert("ONCLICK result"); };
+      elem6.addEventListener("click", handler1);
+      elem6.addEventListener("click", handler2);
+    </script>
+
+    <hr>
+    <!-- 9 -->
+    <div style="height: 50px;" id="elem7"> Click here </div>
+
+    <script>
+      elem7.onmousedown = function(e) { this.innerHTML += "mousedown\n"; this.scrollTop = this.scrollHeight; };
+      elem7.onmouseup = function(e) { this.innerHTML += "mouseup\n"; this.scrollTop = this.scrollHeight; };
+      elem7.onclick = function(e) { this.innerHTML += "click\n"; this.scrollTop = this.scrollHeight; };
+    </script>
+
+    <hr>
+    <!-- 10 -->
+    <input type="button" id="ex10button" value="Ex 10">
+    <input type="text" id="ex10text" size="60">
+
+    <script>
+      ex10button.onclick = function() {
+        ex10text.value += ' ->в onclick ';
+
+        ex10text.focus(); // вызов инициирует событие onfocus
+
+        ex10text.value += ' из onclick-> ';
+      };
+
+      ex10text.onfocus = function() {
+        ex10text.value += ' !focus! ';
+      };
+    </script>
+
+    <hr>
+    <!-- 11 -->
+    <input type="button" id="ex11button" value="Ex 11">
+    <input type="text" id="ex11text" size="60">
+
+    <script>
+      ex11button.onclick = function() {
+        ex11text.value += ' ->в onclick ';
+
+        setTimeout(function() {
+          ex11text.focus(); // сработает после onclick
+        }, 0);
+
+        ex11text.value += ' из onclick-> ';
+      };
+
+      ex11text.onfocus = function() {
+        ex11text.value += ' !focus! ';
+      };
+    </script>
+
+    <hr>
+    <!-- 12 -->
+    <input type="button" value="Ex 12" id="elem12">
+
+    <script>
+      elem12.onclick = function(event) {
+        // вывести тип события, элемент и координаты клика
+        alert(event.type + " на " + event.currentTarget);
+        alert(event.clientX + ":" + event.clientY);
+      }
+    </script>
+
+    <hr>
+    <!-- 13 -->
+    <input type="button" onclick="alert(event.type)" value="Ex 13">
+
+    <hr>
+    <!-- 14 -->
+    <div onclick="alert('Ex 14')">
+      <p>Кликните на <span>P</span>, сработает обработчик на <span>DIV</span></p>
+    </div>
+
+    <hr>
+    <!-- 15 -->
+    <style>
+      .ex-15 * {
+        margin: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+
+    <div class="ex-15">
+      <form onclick="alert('form')">FORM
+        <div onclick="alert('div')">DIV
+          <p onclick="alert('p')">P</p>
+        </div>
+      </form>
+    </div>
+
+    <hr>
+    <!-- 16 -->
+    <div onclick="alert('Ex 16 alert')">
+      <button onclick="event.stopPropagation()">Ex 16</button>
+    </div>
+
+    <hr>
+    <!-- 17 -->
+    <style>
+      #ex17table .highlight {
+        background-color: #ccc;
+        opacity: 0.5;
+      }
+
+      #ex17table td {
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+
+    <table id='ex17table'>
+      <tr>
+        <td><span>1</span></td>
+        <td><span>2</span></td>
+        <td><span>3</span></td>
+      </tr>
+      <tr>
+        <td><span>4</span></td>
+        <td><span>5</span></td>
+        <td><span>6</span></td>
+      </tr>
+      <tr>
+        <td><span>7</span></td>
+        <td><span>8</span></td>
+        <td><span>9</span></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      var selectedTd;
+
+      ex17table.onclick = function(event) {
+        var target = event.target; // где был клик?
+
+        if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+
+        highlight(target); // подсветить TD
+      };
+
+      function highlight(node) {
+        if (selectedTd) {
+          selectedTd.classList.remove('highlight');
+        }
+        selectedTd = node;
+        selectedTd.classList.add('highlight');
+      }
+    </script>
+
+    <hr>
+    <!-- 18 -->
+    <style>
+      #ex18table .highlight {
+        background-color: #ccc;
+        opacity: 0.5;
+      }
+
+      #ex18table td {
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+
+    <table id='ex18table'>
+      <tr>
+        <td><span>1</span></td>
+        <td><span>2</span></td>
+        <td><span>3</span></td>
+      </tr>
+      <tr>
+        <td><span>4</span></td>
+        <td><span>5</span></td>
+        <td><span>6</span></td>
+      </tr>
+      <tr>
+        <td><span>7</span></td>
+        <td><span>8</span></td>
+        <td><span>9</span></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      var selectedTd;
+
+      ex18table.onclick = function(event) {
+        var target = event.target;
+
+        // цикл двигается вверх от target к родителям до table
+        while (target != ex18table) {
+          if (target.tagName == 'TD') {
+            // нашли элемент, который нас интересует!
+            highlight(target);
+            return;
+          }
+          target = target.parentNode;
+        }
+      };
+
+      function highlight(node) {
+        if (selectedTd) {
+          selectedTd.classList.remove('highlight');
+        }
+        selectedTd = node;
+        selectedTd.classList.add('highlight');
+      }
+    </script>
+
+    <hr>
+    <!-- 19 -->
+    <div id="ex19menu">
+      <button data-action="save">Save</button>
+      <button data-action="load">Load</button>
+      <button data-action="search">Search</button>
+    </div>
+
+    <script>
+      function Menu(elem) {
+        this.save = function() {
+          alert( 'saving..' );
+        };
+        this.load = function() {
+          alert( 'loading...' );
+        };
+        this.search = function() {
+          alert( 'searching...' );
+        };
+
+        var self = this;
+
+        elem.onclick = function(e) {
+          var target = e.target;
+          var action = target.getAttribute('data-action');
+          if (action) {
+            self[action]();
+          }
+        };
+      }
+
+      new Menu(ex19menu);
+    </script>
+
+    <hr>
+    <!-- 20 -->
+    <div id="ex20">
+      Counter1:
+      <button data-counter>1</button>
+      Counter2:
+      <button data-counter>2</button>
+    </div>
+
+    <script>
+      ex20.onclick = function(event) {
+        if (!event.target.hasAttribute('data-counter')) return;
+        var counter = event.target;
+        counter.innerHTML++;
+      };
+    </script>
+
+    <hr>
+    <!-- 21 -->
+    <div id="ex21">
+      <button data-toggle-id="subscribe-mail">
+        Show form
+      </button>
+
+      <form id="subscribe-mail" hidden>
+      Email: <input type="email">
+      </form>
+    </div>
+
+    <script>
+      ex21.onclick = function(event) {
+        var target = event.target;
+
+        var id = target.getAttribute('data-toggle-id');
+        if (!id) return;
+
+        var elem = document.getElementById(id);
+
+        elem.hidden = !elem.hidden;
+      };
+    </script>
+
+    <hr>
+    <!-- 22 -->
+    <a href="www.google.com" onclick="return false">Google</a>
+    |
+    <a href="www.facebook.com" onclick="event.preventDefault()">Facebook</a>
+
+    <hr>
+    <!-- 23 -->
+    <button oncontextmenu="alert('Right button handler');">Ex 23</button>
+
+    <hr>
+    <!-- 24 -->
+    <button oncontextmenu="alert('Right button handler'); return false;">Ex 24</button>
+
+    <hr>
+    <!-- 25 -->
+    <button id="ex25button">ex25 Alt+Shift+Click</button>
+
+    <script>
+      ex25button.onclick = function(e) {
+        if (!e.altKey || !e.shiftKey) return;
+        alert( 'Works!' );
+      }
+    </script>
+
+    <hr>
+    <!-- 26 -->
+    <input value="ex26" onmousemove="this.value = 'ex26=' + event.clientX+':'+event.clientY">
+
+    <hr>
+    <!-- 27 -->
+    <input value="ex27" onmousemove="this.value = 'ex27=' + event.pageX+':'+event.pageY">
+
+    <hr>
+    <!-- 28 -->
+    <span ondblclick="alert('double clicked')">Ex 28</span>
+
+    <hr>
+    <!-- 29 -->
+    <div ondblclick="alert('Ex 29 double click')" onselectstart="return false" onmousedown="return false">
+      Двойной клик сюда выведет "Тест", без выделения
+    </div>
+
+    <hr>
+    <!-- 30 -->
+    Элементы списка не выделяются при клике:
+    <ul onmousedown="return false" onselectstart="return false">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <hr>
+    <!-- 31 -->
+    <div id="ex31" style="height:50px; width:50px; border-radius: 50%; background-color: red;"></div>
+    <script type="text/javascript">
+      var elem31 = document.getElementById('ex31');
+
+      elem31.onmousedown = function(e) { // 1. отследить нажатие
+
+        // подготовить к перемещению
+        // 2. разместить на том же месте, но в абсолютных координатах
+        elem31.style.position = 'absolute';
+        moveAt(e);
+        // переместим в body, чтобы мяч был точно не внутри position:relative
+        document.body.appendChild(elem31);
+
+        elem31.style.zIndex = 1000; // показывать мяч над другими элементами
+
+        // передвинуть мяч под координаты курсора
+        // и сдвинуть на половину ширины/высоты для центрирования
+        function moveAt(e) {
+          elem31.style.left = e.pageX - elem31.offsetWidth / 2 + 'px';
+          elem31.style.top = e.pageY - elem31.offsetHeight / 2 + 'px';
+        }
+
+        // 3, перемещать по экрану
+        document.onmousemove = function(e) {
+          moveAt(e);
+        }
+
+        // 4. отследить окончание переноса
+        elem31.onmouseup = function() {
+          document.onmousemove = null;
+          elem31.onmouseup = null;
+        }
+      }
+    </script>
+
+    <hr>
+    <!-- 32 -->
+    <div id="ex32" style="height:50px; width:50px; border-radius: 50%; background-color: red;"></div>
+    <script type="text/javascript">
+      ex32.onmousedown = function(e) {
+        var coords = getCoords(ex32);
+        var shiftX = e.pageX - coords.left;
+        var shiftY = e.pageY - coords.top;
+
+        ex32.style.position = 'absolute';
+        document.body.appendChild(ex32);
+        moveAt(e);
+
+        ex32.style.zIndex = 1000; // над другими элементами
+
+        function moveAt(e) {
+          ex32.style.left = e.pageX - shiftX + 'px';
+          ex32.style.top = e.pageY - shiftY + 'px';
+        }
+
+        function getCoords(elem) { // кроме IE8-
+          var box = elem.getBoundingClientRect();
+
+          return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+          };
+        }
+
+        document.onmousemove = function(e) {
+          moveAt(e);
+        };
+
+        ex32.onmouseup = function() {
+          document.onmousemove = null;
+          ex32.onmouseup = null;
+        };
+      }
+    </script>
+
+    <hr>
+    <!-- 33 -->
+    <div id="ex33" style="position: fixed; top: 0; right: 0; background-color: yellow;"></div>
+    <script type="text/javascript">
+      window.onscroll = function() {
+        var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+        document.getElementById('ex33').innerHTML = 'Ex 33: '+ scrolled + 'px';
+      }
+    </script>
+
+    <hr>
+    <!-- 34 -->
+    <style media="screen">
+      #ex34kinput {
+        font-size: 150%;
+        box-sizing: border-box;
+        width: 95%;
+      }
+
+      #ex34area {
+        width: 95%;
+        box-sizing: border-box;
+        height: 250px;
+        border: 1px solid black;
+        display: block;
+      }
+    </style>
+
+    <form id="ex34form" onsubmit="return false">
+      <input type="text" placeholder="Type here" id="ex34kinput">
+
+      <textarea id="ex34area"></textarea>
+      <input type="button" value="Clear" onclick="ex34area.value = ''" />
+    </form>
+
+    <script type="text/javascript">
+      var kinput = document.getElementById('ex34kinput');
+      var area = document.getElementById('ex34area');
+      var form = document.getElementById('ex34form');
+      kinput.onkeydown = kinput.onkeyup = kinput.onkeypress = handle;
+
+      var lastTime = Date.now();
+
+      function handle(e) {
+        var text = e.type +
+          ' keyCode=' + e.keyCode +
+          ' which=' + e.which +
+          ' charCode=' + e.charCode +
+          ' char=' + String.fromCharCode(e.keyCode || e.charCode) +
+          (e.shiftKey ? ' +shift' : '') +
+          (e.ctrlKey ? ' +ctrl' : '') +
+          (e.altKey ? ' +alt' : '') +
+          (e.metaKey ? ' +meta' : '') + "\n";
+
+        if (area.value && Date.now() - lastTime > 250) {
+          area.value += new Array(81).join('-') + '\n';
+        }
+        lastTime = Date.now();
+
+        area.value += text;
+      }
+    </script>
+
+    <hr>
+    <!-- 35 -->
+    <input onkeydown="ex35.innerHTML = event.keyCode" placeholder="Type here">
+    <strong id="ex35"></strong>
+
+
+    <hr>
+    <!-- 36 -->
+    <script>
+      function ready() {
+        console.log( 'DOM готов' );
+        console.log( "Размеры картинки: " + ex36img.offsetWidth + "x" + ex36img.offsetHeight );
+      }
+
+      document.addEventListener("DOMContentLoaded", ready);
+    </script>
+
+    <img id="ex36img" src="https://www.whichcar.com.au/media/1786/lightning-mcqueen-cars.jpg?width=500&height=333.58662613981767">
+
+    <hr>
+    <!-- 37 -->
+    <script>
+      window.onload = function() {
+        console.log("Размеры картинки: " + ex37img.offsetWidth + "x" + ex37img.offsetHeight);
+      };
+    </script>
+
+    <img id="ex37img" src="https://www.whichcar.com.au/media/1786/lightning-mcqueen-cars.jpg?width=500&height=333.58662613981767">
+
+    <hr>
+    <!-- 38 -->
+    <script type="text/javascript">
+      window.onbeforeunload = function() {
+        return "Are you sure?";
+      };
+    </script>
+
+    <hr>
+    <!-- 39 -->
+    <script type="text/javascript">
+      var script = document.createElement('script');
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js";
+      document.body.appendChild(script);
+      console.log(_);
+    </script>
+
+    <hr>
+    <!-- 40 -->
+    <script type="text/javascript">
+      var script = document.createElement('script');
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+      document.body.appendChild(script);
+
+      script.onload = function() {
+        console.log( $ );
+      }
+    </script>
+
+    <hr>
+    <!-- 41 -->
+    <script type="text/javascript">
+      var script = document.createElement('script');
+      script.src = "myScript.js"
+      document.body.appendChild(script);
+
+      script.onerror = function() {
+        console.warn( "Script load error" );
+      }
+    </script>
+
+    <hr>
+    <!-- 27 -->
+
+
+    <hr>
+    <!-- 27 -->
+
+
+  </body>
+</html>

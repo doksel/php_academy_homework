@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="5.css">
+</head>
+<body>
+<ul>
+    <li><span>Элемент 1</span></li>
+    <li><span>Элемент 2</span></li>
+    <li><span>Элемент 3</span></li>
+    <li><span>Элемент 4</span></li>
+    <li><span>Элемент 5</span></li>
+</ul>
+</body>
+<script>
+    var boldElem = document.querySelector('ul');
+    boldElem.onclick = function (event) {
+        var target = event.target;
+        target.style.backgroundColor = 'yellow';
+        if(!event.ctrlKey)return;
+        target.style.backgroundColor = '';
+        target.classList.toggle("allotted");
+        if(!event.shiftKey)return;
+
+    };
+//    boldElem.
+</script>
+</html>
+
+Эта задача состоит из трёх частей.
+1.	Сделайте список, элементы которого можно выделять кликом.
+2.	Добавьте мульти-выделение. Если клик с нажатым Ctrl (Cmd под Mac), то элемент добавляется-удаляется из выделенных.
+3.	Добавьте выделение промежутков. Если происходит клик с нажатым Shift, то к выделению добавляется промежуток
+    элементов от предыдущего кликнутого до этого. При этом не важно, какое именно действие делал предыдущий клик.
+    Это похоже на то, как работает файловый менеджер в ряде ОС, но чуть проще, так как конкретная реализация выделений
+    различается у разных ОС, и её точное воспроизведение не входит в эту задачу.
