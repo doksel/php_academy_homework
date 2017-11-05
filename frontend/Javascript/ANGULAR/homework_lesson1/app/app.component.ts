@@ -11,7 +11,7 @@ export class Phones{
 }
 
 @Component({
-  selector: 'my-app',
+  selector: 'app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
