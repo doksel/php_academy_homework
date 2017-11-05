@@ -1,41 +1,112 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML>
+
+<html lang="ru-RU">
+
 <head>
+
+
     <meta charset="UTF-8">
-    <title>Document</title>
-</head>
+
+    <title> </title>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
+    <script>
+
+        $("document").ready(function(){
+
+            $("#some_adress").click(function() {
+
+                $("#adress3").show();
+
+                $(".addComment a").click();
+
+                return false;
+
+            });
+
+            $(".addComment a").click(function() {
+
+                $('#comments').append('<tr><td><input type="text"/></td><td><input type="button" class="star" value="*"/></td><td><div class="removeComment">x</div></td></tr>');
+
+                return false;
+
+            });
+
+            $(".removeComment").live('click',function() {
+
+                $(this).parents("tr").remove();
+
+                if ($("#comments tr").size() == 0) $("#adress3").hide();
+
+                return false;
+
+            });
+
+            $(".star").live('click',function () {
+
+                alert('star');
+
+            });
+
+        });
+
+    </script>
+
+
+    <style>
+
+        .some_adress_wrap{height: 20px; width: 189px; position: relative; margin: 7px 0 0px 0;}
+
+        #some_adress {border-bottom: 1px dashed black; cursor: pointer; position: relative; float: right; margin: -4px 5px 0px 0;color: #575656}
+
+        #some_adress2 {border-bottom: 1px dashed black; cursor: pointer; position: relative; float: right; margin: -26px 15px 0px 0;color: #575656}
+
+        #some_adress:hover, #some_adress_return:hover{border: 0;}
+
+        #some_adress_return {border-bottom: 1px dashed black; cursor: pointer; position: relative; z-index:2; float: right; display: none;margin: -4px 5px 0 0;color: #575656;}
+
+        .b-login5__adress { background: #bebebe;display: none; left: -5px; top: 22px; position: absolute; z-index:4;}
+
+    </style>
+
+
 <body>
-<div id="ex3">
-    Найдем в этом тексте слово "бабуля" и подсветим его синим фоном
+
+<div class="some_adress_wrap">
+
+    <div id="toggleadress3">
+
+        <a id="some_adress">Добавить адрес</a>
+
+    </div>
+
+    <div class="b-login5__adress" id="adress3">
+
+        <a id="some_adress2">Добавить адрес</a>
+
+        <table id="comments"></table>
+
+        <table class="table_add_buttons">
+
+            <tr>
+
+                <td>
+
+                    <div class="addComment"><a href="#" class="main_bold_font">+ Добавить адрес</a></div>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
 </div>
 
-<script>
-    function domRangeHighlight(text) {
-        // Получим текстовый узел
-        var root = document.getElementById('ex3').firstChild;
-        // и его содержимое
-        var content = root.nodeValue;
-        // Проверим есть ли совпадения с переданным текстом
-        if (~content.indexOf(text)) {
-            if (document.createRange) {
-                // Если есть совпадение, и браузер поддерживает Range, создаем объект
-                var rng = document.createRange();
-                // Ставим верхнюю границу по индексу совпадения,
-                rng.setStart(root, content.indexOf(text));
-                // а нижнюю по индексу + длина текста
-                rng.setEnd(root, content.indexOf(text) + text.length);
-                // Создаем спан с синим фоном
-                var highlightDiv = document.createElement('span');
-                highlightDiv.style.backgroundColor = 'blue';
-                // Обернем наш Range в спан
-                rng.surroundContents(highlightDiv);
-            } else {
-                alert( 'Вероятно, у вас IE8-, смотрите реализацию TextRange ниже' );
-            }
-        } else {
-            alert( 'Совпадений не найдено' );
-        }
-    }
-</script>
 </body>
+
+
 </html>

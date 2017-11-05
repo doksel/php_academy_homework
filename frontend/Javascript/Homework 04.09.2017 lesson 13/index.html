@@ -3,45 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="Style.css">
+    <link type="text/css" rel="stylesheet" href="Style_index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="JS_index.js"></script>
 </head>
+
 <body>
 <header>
-    <button id="POST">POST</button>
-    <button id="PUT">PUT</button>
-    <button id="DELETE">DELETE</button>
-    <button id="CHAT">CHAT</button>
+    <button id="btn-post">POST</button>
+    <button id="btn-put" disabled>PUT</button>
+    <button id="btn-delete" disabled>DELETE</button>
+    <button id="btn-chat" disabled>CHAT</button>
 </header>
-<table>
+
+<table id="myList">
     <thead>
         <tr>
-            <td>Name</td>
-            <td>Sarname</td>
-            <td>Age</td>
-            <td>Average</td>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Grades</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+
     </tbody>
 </table>
-<script type="text/javascript" src="JS.js"></script>
+
+<div id="dialog-form">
+    <p class="validateTips" >Create student</p>
+
+    <form>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="" placeholder="Petr"><br>
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" id="surname" value="" placeholder="Petrov"><br>
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age" value="" placeholder="22"><br>
+            <label for="grades">Grades</label>
+            <input type="text" name="grades" id="grades" value="" placeholder="4,4,4"><br>
+
+            <input type="button" id="create-user" value="Отправить">
+    </form>
+</div>
+
 </body>
 </html>

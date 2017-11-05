@@ -1,0 +1,26 @@
+{
+  "students": [{
+    "name": "Ivan",
+    "age": 25,
+    "surname": "Ivanov",
+    "grades": "4,4,4"
+  },
+  {
+    "name": "Petp",
+    "surname": "Petrov",
+    "age": 20,
+    "grades": "5,5,5"
+  },
+  {
+    "name": "Sergey",
+    "surname": "Sergeev",
+    "age": 21,
+    "grades": "4,4,5,5"
+  },
+  {
+    "name": "Illya",
+    "surname": "Illyin",
+    "age": 23,
+    "grades": "4,4,4"
+  }]
+}
