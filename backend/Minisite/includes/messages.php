@@ -1,4 +1,3 @@
-<?php
 <?php if (is_messages()): ?>
     <div style="border:1px solid green; color:green; font-style:italic;">
         <ul>

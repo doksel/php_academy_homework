@@ -1,4 +1,3 @@
-<?php
 <nav>
     <ul>
         <li>

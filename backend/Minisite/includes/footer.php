@@ -1,4 +1,3 @@
-<?php
 <p>&copy;Minisite, <?php echo date('Y'); ?></p>
 <nav>
     <ul>
