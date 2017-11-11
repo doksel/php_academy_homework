@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<ul class="phones">
+    <li *ngFor="let hero of phones"
+        [class.selected]="hero === selectedPhone"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span>{{hero.name}}
+    </li>
+</ul>
+<div *ngIf="selectedPhone">
+    <h2>{{selectedPhone.name}}</h2>
+    <div><label><b>phone</b></label>{{selectedPhone.name}}</div>
+    <div><label><b>type phone:</b></label>{{selectedPhone.typephone}}</div>
+    <div><label><b>system:</b></label>{{selectedPhone.system}}</div>
+    <div><label><b>memory:</b></label>{{selectedPhone.memory}}</div>
+    <div><label><b>screen:</b></label>{{selectedPhone.screen}}</div>
+    <div><label><b>camera:</b></label>{{selectedPhone.camera}}</div>
+    <div class="imgPhone"><img src="{{selectedPhone.img}}"  alt="img phone"/></div>
+
+</div>
