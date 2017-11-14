@@ -1,5 +1,4 @@
 <?php
-
 class Router
 {
     protected $uri;
@@ -14,36 +13,29 @@ class Router
     {
         return $this->uri;
     }
-
     public function getController()
     {
         return $this->controller;
     }
-
     public function getAction()
     {
         return $this->action;
     }
-
     public function getParams()
     {
         return $this->params;
     }
-
-
     public function getRoute()
     {
         return $this->route;
     }
-
     public function getMethodPrefix()
     {
-       return $this->method_prefix;
+        return $this->method_prefix;
     }
-
     public function getLanguage()
     {
-       return $this->language;
+        return $this->language;
     }
 
     public function __construct($uri)
@@ -54,14 +46,14 @@ class Router
         $this->route = Config::get('default_route');
         $this->method_prefix = isset($routes[$this->route]) ? $routes[$this->route] : '';
         $this->language = Config::get('default_language');
-        $this->controler = Config::get('default_controller');
+        $this->controller = Config::get('default_controller');
         $this->action = Config::get('default_action');
 
         $uri_parts = explode('?', $this->uri);
-
         $path = $uri_parts[0];
-
         $path_parts = explode('/', $path);
+
+//        echo "<pre>";print_r($path_parts);
 
         if (count($path_parts)){
             if(in_array(strtolower(current($path_parts)), array_keys($routes)) ){
@@ -73,13 +65,22 @@ class Router
                 array_shift($path_parts);
             }
             if (current($path_parts) ){
+                $this->controller = strtolower(current($path_parts));
+                array_shift($path_parts);
+            }
+            if (current($path_parts) ){
                 $this->action = strtolower(current($path_parts));
                 array_shift($path_parts);
             }
 
             $this->params = $path_parts;
         }
-
     }
 
+    /**
+     * @param string $action
+     */
+    public static function redirect($location){
+        header("Location: $location");
+    }
 }

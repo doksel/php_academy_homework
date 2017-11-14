@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title><?=Config::get('site_name')?></title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/admin.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -12,15 +13,16 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#"><?=Config::get('site_name')?></a>
+    <a class="navbar-brand" href="#"><?=Config::get('site_name')?> -                      </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <?php if(Session::get('login')){?>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/pages/">Pages</a></li>
-            <li class="nav-item"><a  class="nav-link" href="/contacts/">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/pages/">Pages</a></li>
+            <li class="nav-item"><a  class="nav-link" href="/admin/contacts/">Contact Us</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -29,12 +31,9 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
-            <?php if (empty(Session::get('user'))) : ?>
-            <li class="nav-item"><a class="nav-link" href="/users/login">Login</a></li>
-            <?php else: ?>
-            <li class="nav-item"><a class="nav-link" href="/users/logout">Logout</a></li>
-            <?php endif; ?>
+            <li><a class="nav-link" href="/admin/users/logout">Logout</a></li>
         </ul>
+        <?php } ?>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -52,8 +51,6 @@
         <?=$data['content']?>
     </div>
 </main><!-- /.container -->
-
-
 
 </body>
 </html>
