@@ -1,0 +1,16 @@
+<section class="todo-list" *ngIf="true">
+        <div class="todo-item" *ngFor="let todo of todo1; let i = index " [ngClass]="{'completed': todo.status }">
+            <button class="checkbox icon" (click)="toggle(todo)">
+                <i class="material-icons" *ngIf="todo.status">check_box</i>
+                <i class="material-icons" *ngIf="!todo.status">check_box_outline_blank</i>
+            </button>
+            
+            <span class="title">{{todo.title}}</span>
+
+            <div class="actions">
+                <button class="delete icon" (click)="delete(todo)">
+                    <i class="material-icons">delete</i>
+                </button>
+            </div>
+        </div>
+    </section>
