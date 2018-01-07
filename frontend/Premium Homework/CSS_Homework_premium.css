@@ -68,6 +68,7 @@ a{
     transition: 1s color;
     color: #3c92cd;
 }
+
 /* Центральная надпись шапки*/
 .head{
     padding: 30px 0 0 0;
@@ -96,6 +97,7 @@ a{
     color: #999999;
     font-size: 13px;
 }
+
 /* Стили сайдбара*/
 #sidebar{
     height: 22px;
@@ -122,6 +124,7 @@ a{
     margin-right: 70px;
 
 }
+
 /* Навигация*/
 #youarehere{
     height: 24px;
@@ -167,6 +170,7 @@ a{
 .first_content_3{
     margin-right: 0;
 }
+
 /*Ткст между картинками*/
 #textpage{
     width: 700px;
@@ -176,6 +180,7 @@ a{
     margin-left: 105px;
     font-weight: 300;
 }
+
 /*Вторые девять картинок*/
 .Second_content{
     display: block;
@@ -217,6 +222,7 @@ a{
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 /*Стили появления лупы на картинках*/
 .Second_content span{
     display: block;
@@ -257,6 +263,7 @@ span:hover img{
 span:hover #lupa{
     z-index: 1;
 }
+
 /*переходы на страницы*/
 .navpage{
     display: flex;
@@ -281,6 +288,7 @@ span:hover #lupa{
     margin: 1px 4px;
     text-align: center;
 }
+
 /*строка под переходами на страницы*/
 #faq{
     width: 1140px;
